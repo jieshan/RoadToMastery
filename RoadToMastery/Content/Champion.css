@@ -1,0 +1,153 @@
+﻿#championTitle {
+    font-size: 25px;
+    color: #c43235;
+    font-weight: bold;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    display: inline-block;
+    vertical-align: middle;
+}
+.champIcon {
+    height: 60px;
+    width: 60px;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 30px 10px 20px 15px;
+}
+#champLoadingScreen {
+    width: 100%;
+    padding-right: 30px !important;
+}
+#championStatsPanel {
+    margin-top: 30px;
+    padding-left: 20px !important;
+}
+
+.tableHeader {
+    color: #06000a;
+}
+.tableStats {
+    color: #c43235;
+    font-weight: bold;
+    font-size: 16px;
+}
+.tableRankingText {
+    display: inline-block;
+    vertical-align: bottom;
+    font-weight: bold;
+    color: #430046;
+}
+.tableRanking {
+    display: inline-block;
+    vertical-align: bottom;
+    font-weight: bold;
+    color: #c43235;
+}
+.rankingCategories {
+    margin-top: 15px !important;
+}
+.borderless td, .borderless th {
+    border: none !important;
+    vertical-align:middle !important;
+}
+
+#lowerSection {
+    margin-top: 40px;
+}
+
+#radarChartContainer {
+    margin-top: 10px;
+}
+.radar-chart .area {
+    fill-opacity: 0.05;
+}
+.radar-chart.focus .area {
+    fill-opacity: 0.0;
+}
+.radar-chart.focus .area.focused {
+    fill-opacity: 0.1;
+}
+.legend-Tier3, .area.Tier3, .Tier3 .circle {
+    fill: #6ed3cf !important;
+    stroke: #6ed3cf !important;
+}
+.legend-Tier4, .area.Tier4, .Tier4 .circle {
+    fill: #9068be !important;
+    stroke: #9068be !important;
+}
+.legend-Tier5, .area.Tier5, .Tier5 .circle {
+    fill: #c43235 !important;
+    stroke: #c43235 !important;
+}
+.legend {
+    font-weight: bold !important;
+    font-family: 'Open Sans', sans-serif !important;
+    font-size: 14px;
+    fill: #06000a !important;
+}
+.legend-text-Tier3, .legend-text-Tier4, .legend-text-Tier5, .tooltip {
+    font-weight: bold !important;
+    font-family: 'Open Sans', sans-serif !important;
+    font-size: 11px;
+    fill: #06000a !important;
+}
+
+#getStatsInput {
+    height: 30px;
+    border: 1px solid #c43235;
+    margin-top: 10px;
+}
+#getStatsButton {
+    background-color: #430046;
+    height: 30px;
+    border: none;
+    color: #e6e6e8;
+    margin-top: 10px;
+}
+#getStatsMessage {
+    padding: 10px 0px;
+    color: #8a8a8a;
+}
+#compareStatsTable {
+    text-align: center !important;
+}
+.compareStatsTableHeaders {
+    text-align: center !important;
+}
+.compareStatsTableHeaders > .tableHeader {
+    color: #a0a0a0;
+    font-weight: bold;
+}
+.lvl5Cat {
+    color: #a0a0a0;
+    font-weight: bold;
+}
+.lvl5Ranking {
+    color: #06000a;
+    font-weight: bold;
+}
+.lvl5Stats {
+    color: #06000a;
+    font-weight: bold;
+}
+.summonerStats {
+    color: #06000a;
+    font-weight: bold;
+}
+.glyphicon-question-sign {
+    color: #8a8a8a;
+}
+.glyphicon-arrow-up {
+    color: #c43235;
+}
+.glyphicon-arrow-down {
+    color: #430046;
+}
+.glyphicon-ok-sign {
+    color: #c43235;
+    margin-right: 5px;
+}
+.glyphicon-remove-sign {
+    color: #430046;
+    margin-right: 5px;
+}

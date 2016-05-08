@@ -1,0 +1,57 @@
+﻿html, body, .row {
+    background-color: #e6e6e8;
+    color: #06000a;
+    font-family: 'Open Sans', sans-serif !important;
+}
+a, a:hover {
+    text-decoration: none;
+}
+#siteNavBar {
+    background-color: #06000a;
+    border-color: #06000a;
+}
+.navbar-brand-custom, .navbar-nav-custom > li > a {
+    color: #e6e6e8 !important;
+}
+.navbar-brand-custom:hover, .navbar-nav-custom > li > a:hover {
+    background-color: #c43235 !important;
+}
+
+.champNavBar {
+    float: left;
+}
+.champNavBarIcon {
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+}
+.champNavBarIcon:hover {
+    width: 50px;
+    height: 50px;
+    margin: 0px;
+}
+.dropdown-menu {
+    padding-left: 25px;
+    min-width: 550px;
+    background-color: #000000;
+}
+
+.rankingCategories, #rankingTitle {
+    font-size: 20px;
+    color: #c43235;
+    font-weight: bold;
+    margin-right: 10px;
+}
+.rankingCategoryDescriptions{
+    display: inline-block;
+    vertical-align: bottom;
+    margin-bottom: 5px;
+    color: #8a8a8a;
+}
+.rankingCategoryInfo {
+    display: inline-block;
+    vertical-align: bottom;
+    line-height: 20px;
+    margin-bottom: 10px;
+    color: #8a8a8a;
+}

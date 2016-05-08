@@ -1,0 +1,84 @@
+﻿@using RoadToMastery.Analysis;
+@{
+    ViewBag.Title = "Home";
+    var rankings = (Dictionary<string, List<int>>)ViewData["rankings"];
+}
+
+<script type="text/javascript">
+    var rankings = @Html.Raw(Json.Encode(ViewData["rankings"]));
+    var data = @Html.Raw(Json.Encode(ViewData["data"]));
+    var rankingName = @Html.Raw(Json.Encode(ViewData["rankingName"]));
+</script>
+
+<div class="jumbotron jumbotron-custom">
+    <h1>RoadToMastery</h1>
+    <p class="lead">An analysis of League of Legends champion masteries based on <b class="lead-emphasis">350K+</b> data points from <b class="lead-emphasis">
+    60K+ Platinum+</b> NA players.
+    On the ranking road to mastery, check out which champions made to the top, which made the most improvement, and compare them with your own ranked stats!
+</p>
+</div>
+
+<div class="row">
+    <div class="col-md-offset-1 col-md-10">
+        <div class="row">
+            <div class="rankingCategories">General</div>
+            <span class="rankingCategoryInfo glyphicon glyphicon-info-sign"></span>
+            <div class="rankingCategoryDescriptions">Some pulse-checking, general metrics.</div>
+            <div class="rankingRadioButtons">
+                <div class="rankingRadioButton"><input id="totalCount" type="radio" name="rankingLists" value="totalCount" checked> Total Mastery Count</div>
+                <div class="rankingRadioButton"><input id="lvl5Count" type="radio" name="rankingLists" value="lvl5Count"> Tier 5 Count</div>
+                <div class="rankingRadioButton"><input id="lvl5TotalGames" type="radio" name="rankingLists" value="lvl5TotalGames"> Tier 5 Games Played</div>
+                <div class="rankingRadioButton"><input id="lvl5Percentage" type="radio" name="rankingLists" value="lvl5Percentage"> Tier 5 Percentage</div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="rankingCategories">Mastery Progression</div>
+            <span class="rankingCategoryInfo glyphicon glyphicon-info-sign"></span>
+            <div class="rankingCategoryDescriptions">When a player reaches a higher Tier, how do these needles move on average?</div>
+            <div class="rankingRadioButtons">
+                <div class="rankingRadioButton"><input id="improvementWinRate" type="radio" name="rankingLists" value="improvementWinRate"> Win Rate</div>
+                <div class="rankingRadioButton"><input id="improvementKills" type="radio" name="rankingLists" value="improvementKills"> #Avg. Kills</div>
+                <div class="rankingRadioButton"><input id="improvementDeaths" type="radio" name="rankingLists" value="improvementDeaths"> #Avg. Deaths</div>
+                <div class="rankingRadioButton"><input id="improvementAssists" type="radio" name="rankingLists" value="improvementAssists"> #Avg. Assists</div>
+                <div class="rankingRadioButton"><input id="improvementDamage" type="radio" name="rankingLists" value="improvementDamage"> Avg. Damage</div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="rankingCategories">Tier 5 Game Stats</div>
+            <span class="rankingCategoryInfo glyphicon glyphicon-info-sign"></span>
+            <div class="rankingCategoryDescriptions">Who's at the top when all champions are played to the fullest by Tier 5 summoners?</div>
+            <div class="rankingRadioButtons">
+                <div class="rankingRadioButton"><input id="lvl5WinRate" type="radio" name="rankingLists" value="lvl5WinRate">Win Rate</div>
+                <div class="rankingRadioButton"><input id="lvl5AvgKills" type="radio" name="rankingLists" value="lvl5AvgKills">#Avg. Kills</div>
+                <div class="rankingRadioButton"><input id="lvl5AvgDeaths" type="radio" name="rankingLists" value="lvl5AvgDeaths">#Avg. Deaths</div>
+                <div class="rankingRadioButton"><input id="lvl5AvgAssists" type="radio" name="rankingLists" value="lvl5AvgAssists">#Avg. Assists</div>
+                <div class="rankingRadioButton"><input id="lvl5AvgDamage" type="radio" name="rankingLists" value="lvl5AvgDamage">Avg. Damage</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<hr id="divider">
+
+<div class="row">
+    <div class="col-md-offset-1 col-md-10">
+        <div class="row">
+            <div id="rankingExplanations" class="col-md-9">
+                <div id="rankingTitle"></div>
+                <div id="rankingDescription"></div>
+            </div><!--
+            --><div id="toggleRankingsDisplayContainer" class="col-md-3">
+                <div id="toggleRankingsDisplayButton">Show Top & Bottom 10</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div id="chartContainer" class="col-md-offset-1 col-md-10">
+        <div id="rankingChart"></div>
+    </div>
+</div>
+
+<script type="text/javascript" src="~/Scripts/Index.js"></script>
+<link rel="stylesheet" type="text/css" href="~/Content/Index.css">

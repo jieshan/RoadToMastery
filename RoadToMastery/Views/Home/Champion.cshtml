@@ -1,0 +1,319 @@
+﻿@{
+    ViewBag.Title = ViewData["champName"];
+    var champRankings = (Dictionary<string, int>)ViewData["champRankings"];
+    var champData = (Dictionary<string, double>)ViewData["champData"];
+    var absLevelStats = (List<double[]>)ViewData["absoluteLevelStats"];
+}
+
+<script type="text/javascript">
+    var relativeLevelStats = @Html.Raw(Json.Encode(ViewData["relativeLevelStats"]));
+    var absoluteLevelStats = @Html.Raw(Json.Encode(ViewData["absoluteLevelStats"]));
+    var championId = @Html.Raw(Json.Encode(@ViewData["champId"]));
+    var championImg = @Html.Raw(Json.Encode(@ViewData["champImage"]));
+</script>
+
+<div class="row">
+    <div class="col-md-5">
+        <div class="row">
+            <img class="champIcon" src=@ViewData["champImage"]>
+            <div id="championTitle" >@ViewData["champName"]</div>
+        </div>    
+        <div class="row">
+            <img id="champLoadingScreen" class="col-md-9" src="">
+        </div>
+    </div>
+    <div id="championStatsPanel" class="col-md-7">
+        <div class="row">
+            <div class="rankingCategories">General</div>
+            <span class="rankingCategoryInfo glyphicon glyphicon-info-sign"></span>
+            <div class="rankingCategoryDescriptions">Some pulse-checking, general metrics.</div>
+            <table class="table borderless">
+                <thead>
+                    <tr>
+                        <th><a href="..\Index?rankingName=totalCount"><div class="tableHeader">Total Mastery Count</div></a></th>
+                        <th><a href="..\Index?rankingName=lvl5Percentage"><div class="tableHeader">Tier 5 Percentage</div></a></th>
+                        <th><a href="..\Index?rankingName=lvl5Count"><div class="tableHeader">Tier 5 Count</div></a></th>
+                        <th><a href="..\Index?rankingName=lvl5TotalGames"><div class="tableHeader">Tier 5 Games Played</div></a></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <a href="..\Index?rankingName=totalCount">
+                                <div class="tableStats">@champData["totalCount"]</div>
+                                <div class="tableRankingText">Rank</div>
+                                <div class="tableRanking">@champRankings["totalCount"]</div>
+                            </a>
+                        </td>
+                        <td>
+                            <a href="..\Index?rankingName=lvl5Percentage">
+                                <div class="tableStats">@String.Format("{0:n2}", @champData["lvl5Percentage"] * 100)%</div>
+                                <div class="tableRankingText">Rank</div>
+                                <div class="tableRanking">@champRankings["lvl5Percentage"]</div>
+                            </a>
+                        </td>
+                        <td>
+                            <a href="..\Index?rankingName=lvl5Count">
+                                <div class="tableStats">@champData["lvl5Count"]</div>
+                                <div class="tableRankingText">Rank</div>
+                                <div class="tableRanking">@champRankings["lvl5Count"]</div>
+                            </a>
+                        </td>
+                        <td>
+                            <a href="..\Index?rankingName=lvl5TotalGames">
+                                <div class="tableStats">@champData["lvl5TotalGames"]</div>
+                                <div class="tableRankingText">Rank</div>
+                                <div class="tableRanking">@champRankings["lvl5TotalGames"]</div>
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="row">
+            <div class="rankingCategories">Mastery Progression</div>
+            <span class="rankingCategoryInfo glyphicon glyphicon-info-sign"></span>
+            <div class="rankingCategoryDescriptions">When a player reaches a higher Tier, how do these needles move on average?</div>
+            <table class="table borderless">
+                <thead>
+                    <tr>
+                        <th><a href="..\Index?rankingName=improvementWinRate"><div class="tableHeader">Win Rate</div></a></th>
+                        <th><a href="..\Index?rankingName=improvementKills"><div class="tableHeader">#Avg. Kills</div></a></th>
+                        <th><a href="..\Index?rankingName=improvementDeaths"><div class="tableHeader">#Avg. Deaths</div></a></th>
+                        <th><a href="..\Index?rankingName=improvementAssists"><div class="tableHeader">#Avg. Assists</div></a></th>
+                        <th><a href="..\Index?rankingName=improvementDamage"><div class="tableHeader">Avg. Damage</div></a></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <a href="..\Index?rankingName=improvementWinRate">
+                                <div class="tableStats">@String.Format("{0:n2}", @champData["improvementWinRate"] * 100)%</div>
+                                <div class="tableRankingText">Rank</div>
+                                <div class="tableRanking">@champRankings["improvementWinRate"]</div>
+                            </a>
+                        </td>
+                        <td>
+                            <a href="..\Index?rankingName=improvementKills">
+                                <div class="tableStats">@String.Format("{0:n3}", @champData["improvementKills"])</div>
+                                <div class="tableRankingText">Rank</div>
+                                <div class="tableRanking">@champRankings["improvementKills"]</div>
+                            </a>
+                        </td>
+                        <td>
+                            <a href="..\Index?rankingName=improvementDeaths">
+                                <div class="tableStats">@String.Format("{0:n3}", @champData["improvementDeaths"])</div>
+                                <div class="tableRankingText">Rank</div>
+                                <div class="tableRanking">@champRankings["improvementDeaths"]</div>
+                            </a>
+                        </td>
+                        <td>
+                            <a href="..\Index?rankingName=improvementAssists">
+                                <div class="tableStats">@String.Format("{0:n3}", @champData["improvementAssists"])</div>
+                                <div class="tableRankingText">Rank</div>
+                                <div class="tableRanking">@champRankings["improvementAssists"]</div>
+                            </a>
+                        </td>
+                        <td>
+                            <a href="..\Index?rankingName=improvementDamage">
+                                <div class="tableStats">@String.Format("{0:n3}", @champData["improvementDamage"])</div>
+                                <div class="tableRankingText">Rank</div>
+                                <div class="tableRanking">@champRankings["improvementDamage"]</div>
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<div id="lowerSection" class="row">
+    <div class="col-md-6">
+        <div class="rankingCategories">Tier Comparison</div>
+        <span class="rankingCategoryInfo glyphicon glyphicon-info-sign"></span>
+        <div class="rankingCategoryDescriptions">Comparing the averages among Tier 3, 4 and 5.</div>
+        <div id="radarChartContainer">
+            <div id="radarChart"></div>
+        </div>
+    </div>
+    <div class="col-md-1"></div>
+    <div class="col-md-5">
+        <div class="rankingCategories">Compare Tier 5 Stats with Yours</div>
+        <span class="rankingCategoryInfo glyphicon glyphicon-info-sign"></span>
+        <div class="rankingCategoryDescriptions">How's your performance on this champion in season 2016 ranked?</div>
+        <input id="getStatsInput" name="summonerName" placeholder="Summoner name">
+        <button id="getStatsButton">Get Stats</button>
+        <div id="getStatsMessage"></div>
+        <table id="compareStatsTable" class="table borderless">
+            <thead>
+                <tr>
+                    <th class="compareStatsTableHeaders"><div class="tableHeader"></div></th>
+                    <th class="compareStatsTableHeaders"><div class="tableHeader">Rank</div></th>
+                    <th class="compareStatsTableHeaders"><div class="tableHeader">Stats</div></th>
+                    <th class="compareStatsTableHeaders"><div class="tableHeader">Comparison</div></th>
+                    <th class="compareStatsTableHeaders"><div class="tableHeader">Summoner Stats</div></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <div class="lvl5Cat">Win Rate</div>
+                    </td>
+                    <td>
+                        <div class="lvl5Ranking">@champRankings["lvl5WinRate"]</div>
+                    </td>
+                    <td>
+                        <div class="lvl5Stats">@String.Format("{0:F3}", @absLevelStats[@absLevelStats.Count - 1][0])</div>
+                    </td>
+                    <td>
+                        <span class="userComparison glyphicon glyphicon-question-sign"></span>
+                    </td>
+                    <td>
+                        <div id="summonerWinRate" class="summonerStats">--</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="lvl5Cat">Avg Kills</div>
+                    </td>
+                    <td>
+                        <div class="lvl5Ranking">@champRankings["lvl5AvgKills"]</div>
+                    </td>
+                    <td>
+                        <div class="lvl5Stats">@String.Format("{0:F3}", @absLevelStats[@absLevelStats.Count - 1][1])</div>
+                    </td>
+                    <td>
+                        <span class="userComparison glyphicon glyphicon-question-sign"></span>
+                    </td>
+                    <td>
+                        <div id="summonerAvgKills" class="summonerStats">--</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="lvl5Cat">Avg Deaths</div>
+                    </td>
+                    <td>
+                        <div class="lvl5Ranking">@champRankings["lvl5AvgDeaths"]</div>
+                    </td>
+                    <td>
+                        <div class="lvl5Stats">@String.Format("{0:F3}", @absLevelStats[@absLevelStats.Count - 1][2])</div>
+                    </td>
+                    <td>
+                        <span class="userComparison glyphicon glyphicon-question-sign"></span>
+                    </td>
+                    <td>
+                        <div id="summonerAvgDeaths" class="summonerStats">--</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="lvl5Cat">Avg Assists</div>
+                    </td>
+                    <td>
+                        <div class="lvl5Ranking">@champRankings["lvl5AvgAssists"]</div>
+                    </td>
+                    <td>
+                        <div class="lvl5Stats">@String.Format("{0:F3}", @absLevelStats[@absLevelStats.Count - 1][3])</div>
+                    </td>
+                    <td>
+                        <span class="userComparison glyphicon glyphicon-question-sign"></span>
+                    </td>
+                    <td>
+                        <div id="summonerAvgAssists" class="summonerStats">--</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="lvl5Cat">Avg Physical Dmg</div>
+                    </td>
+                    <td>
+                        <div class="lvl5Ranking">@champRankings["lvl5AvgPhysicalDmg"]</div>
+                    </td>
+                    <td>
+                        <div class="lvl5Stats">@String.Format("{0:F3}", @absLevelStats[@absLevelStats.Count - 1][4])</div>
+                    </td>
+                    <td>
+                        <span class="userComparison glyphicon glyphicon-question-sign"></span>
+                    </td>
+                    <td>
+                        <div id="summonerAvgPhysicalDamage" class="summonerStats">--</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="lvl5Cat">Avg Magic Dmg</div>
+                    </td>
+                    <td>
+                        <div class="lvl5Ranking">@champRankings["lvl5AvgMagicDmg"]</div>
+                    </td>
+                    <td>
+                        <div class="lvl5Stats">@String.Format("{0:F3}", @absLevelStats[@absLevelStats.Count - 1][5])</div>
+                    </td>
+                    <td>
+                        <span class="userComparison glyphicon glyphicon-question-sign"></span>
+                    </td>
+                    <td>
+                        <div id="summonerMagicDamage" class="summonerStats">--</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="lvl5Cat">Avg Gold (K)</div>
+                    </td>
+                    <td>
+                        <div class="lvl5Ranking">@champRankings["lvl5AvgGold"]</div>
+                    </td>
+                    <td>
+                        <div class="lvl5Stats">@String.Format("{0:F3}", @absLevelStats[@absLevelStats.Count - 1][6])</div>
+                    </td>
+                    <td>
+                        <span class="userComparison glyphicon glyphicon-question-sign"></span>
+                    </td>
+                    <td>
+                        <div id="summonerAvgGold" class="summonerStats">--</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="lvl5Cat">Avg CS</div>
+                    </td>
+                    <td>
+                        <div class="lvl5Ranking">@champRankings["lvl5AvgCS"]</div>
+                    </td>
+                    <td>
+                        <div class="lvl5Stats">@String.Format("{0:F3}", @absLevelStats[@absLevelStats.Count - 1][7])</div>
+                    </td>
+                    <td>
+                        <span class="userComparison glyphicon glyphicon-question-sign"></span>
+                    </td>
+                    <td>
+                        <div id="summonerAvgCS" class="summonerStats">--</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="lvl5Cat">Avg Turrets</div>
+                    </td>
+                    <td>
+                        <div class="lvl5Ranking">@champRankings["lvl5AvgTurrets"]</div>
+                    </td>
+                    <td>
+                        <div class="lvl5Stats">@String.Format("{0:F3}", @absLevelStats[@absLevelStats.Count - 1][8])</div>
+                    </td>
+                    <td>
+                        <span class="userComparison glyphicon glyphicon-question-sign"></span>
+                    </td>
+                    <td>
+                        <div id="summonerAvgTurrets" class="summonerStats">--</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script type="text/javascript" src="~/Scripts/radar-chart.js"></script>
+<script type="text/javascript" src="~/Scripts/Champion.js"></script>
+<link rel="stylesheet" type="text/css" href="~/Content/radar-chart.css">
+<link rel="stylesheet" type="text/css" href="~/Content/Champion.css">

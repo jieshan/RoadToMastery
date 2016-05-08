@@ -1,0 +1,76 @@
+﻿.jumbotron-custom {
+    background-color: #430046;
+    color: #e6e6e8;
+}
+.lead {
+    font-size: 16px;
+    color: #bbbbbb;
+}
+.lead-emphasis {
+    color: #e6e6e8;
+}
+.rankingRadioButtons {
+    margin-bottom: 30px;
+    color: #06000a;
+    font-size: 16px;
+    font-weight: bold;
+}
+.rankingRadioButton {
+    display: inline-block;
+    vertical-align: bottom;
+    margin-right: 10px;
+}
+input[type="radio"]{
+  height: 15px;
+  width: 15px;
+}
+#divider {
+    margin-top: 0px !important;
+    border-top-color: #cccccc;
+}
+#rankingExplanations {
+    padding-left: 0px !important;
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+}
+#rankingDescription {
+    margin-top: 5px;
+    margin-bottom: 30px;
+    padding-right: 10px;
+    font-size: 16px;
+}
+#toggleRankingsDisplayContainer {
+    padding-right: 0px !important;
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+}
+#toggleRankingsDisplayButton {
+    width: 180px;
+    height: 40px;
+    line-height: 40px;
+    color: #e6e6e8;
+    background-color: #430046;
+    text-align: center;
+    font-weight: bold;
+}
+
+.extremeBar {
+    fill: #c43235;
+    font-weight: bold;
+}
+.bar {
+    fill: #430046;
+    font-weight: bold;
+}
+.barText {
+    font: 14px 'Open Sans', sans-serif;
+    font-weight: bold;
+    fill: #aaaaaa;
+}
+
+.championText {
+  font: 16px 'Open Sans', sans-serif;
+  font-weight: bold;
+}

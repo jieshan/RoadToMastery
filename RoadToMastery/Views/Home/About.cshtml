@@ -3,5 +3,123 @@
 }
 
 <div class="row">
+    <div id="aboutContent" class="col-md-offset-1 col-md-10">
+        <div class="row">
+            <div id="question1" class="questions">
+                <span id="expandAboutText1" class="expandAboutText glyphicon glyphicon-chevron-down"></span>What is RoadToMastery?
+            </div>
+        </div>
+        <div class="row">
+            <div id="answer1" class="answers">
+                <p>
+                    RoadToMastery is an analysis of League of Legends' 350K+ champion mastery data entries, based on 60K+ NA Platinum+ players. Besides some general counters,
+                    the web app features two kinds of analysis on all champions: mastery progression and Tier 5 averages.
+                </p>
 
+                <p>
+                    The numbers of mastery progression show the average improvement/regression when mastery of a given champion levels up from Tier 3 to Tier 4, or from Tier 4 to Tier 5.
+                    For example, Rengar has a 0.538 on average number of kills per game, which means that a player typically gains an extra 0.538 kills when reaching a higher tier on Rengar.
+                </p>
+
+                <p>
+                    When players reach Tier 5 of a champion, we assume that they have deep enough understanding of it. So what kind of contributions does a Tier 5 champion x make on average? For any given
+                    champion, the average performance of all Tier 5 summoners is calculated, leading to a "profile" of a typical Tier 5 game stats of that champion. On the champion's page, you can see how
+                    the Tier 5 profile progresses from Tier 3 or 4 on the radar chart, or get some food for thought by comparing you own ranked stats on the same champion with the Tier 5 profile.
+                </p>
+
+                <p>
+                    For each of all the stats above, RoadToMastery shows a ranking of all champions. From there, you can get a glimpse at the what kind of role a champion plays in the League. But of course,
+                    the rankings are subject to different interpretations, so feel free to weigh in!
+                </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div id="question2" class="questions">
+                <span id="expandAboutText2" class="expandAboutText glyphicon glyphicon-chevron-down"></span>How did you get the data?
+            </div>
+        </div>
+        <div class="row">
+            <div id="answer2" class="answers">
+                <p>
+                    From the <a href="https://developer.riotgames.com/">API endpoints</a> provided by Riot. Only Platinum+ player stats are included for the analysis since they in general already have a good grasp of the gameplay,
+                    and their champion stats should contain relatively less noise.
+                </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div id="question3" class="questions">
+                <span id="expandAboutText3" class="expandAboutText glyphicon glyphicon-chevron-down"></span>How did you calculate the improvement of win rate, kills, etc.?
+            </div>
+        </div>
+        <div class="row">
+            <div id="answer3" class="answers">
+                <p>
+                    By doing a <a href="https://en.wikipedia.org/wiki/Linear_regression">linear regression</a> between the mastery tier and the metric we are interested in.
+                    For example, for progression of win rate on Gangplank, firstly a number pair of (mastery tier, Gangplank win rate) is obtained from all Gangplank summoners.
+                    Then we put all the mastery tier data on the a chart's x axis and all the win rate data on the y axis, and try to put a straight line on the chart to best fit
+                    both data. By this, we are essentially asking, what kind of win rate on Gangplank we can preidict if we know a summoner's mastery tier on him? Once we know that
+                    straight line, the slope of it, also the delta difference of win rate of two consecutive mastery tiers, is the progression metric we report.
+                </p>
+                <p>
+                    Of course, whether using linear regression to model data with discrete levels like mastery tier is up to debate. Here I am using it as a preliminary method
+                    to pulse-check the data.
+                </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div id="question4" class="questions">
+                <span id="expandAboutText4" class="expandAboutText glyphicon glyphicon-chevron-down"></span>What does the radar chart show?
+            </div>
+        </div>
+        <div class="row">
+            <div id="answer4" class="answers">
+                <p>
+                    For each champion we trace the Tier 3-5 average stats on the radar graph, highlighting the difference among different mastery tiers. For instance, in this
+                    radar graph of Gangplank below, we can see that as a player climbs the ladder of mastery tiers, all stats of kills, deaths, assists, physical damage, gold, cs and turrets improve.
+                    The net result is the boost in win rate.
+                </p>
+                <div class="col-md-12">
+                    <img id="gangplankRadar" class="aboutImgs" src="~/Content/img/GangplankRadar.png" />
+                </div>
+                <p>Note that the relative position on the radar graph is based on the percentage of the highest achieved value on the given metric among all champions.</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div id="question5" class="questions">
+                <span id="expandAboutText5" class="expandAboutText glyphicon glyphicon-chevron-down"></span>What does the stats comparison table show?
+            </div>
+        </div>
+        <div class="row">
+            <div id="answer5" class="answers">
+                You can search for your own (or anyone else's) ranked stats on a champion and compare the results with the Tier 5 averages of the same champion. For instance, below is my own
+                comparison table on Ahri. Comparing with Ahri's Tier 5 profile, I'm not winning a lof of games with her despite better KDA stats. On farming my cs score is lower by a lot -
+                did I try to roam too much at the cost of missing minion waves and letting my opposing mid lane free farm and push? Also I need to improve on my magic damage output -
+                should I try to poke more before a team fight bursts out? I'm hoping that this table can serve as a starting point for players to reflect on the gameplay when playing as a given champion.
+                <div id="ahriTableContainer" class="col-md-12">
+                    <img id="ahriTable" class="aboutImgs" src="~/Content/img/AhriTable.png" />
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div id="question6" class="questions">
+                <span id="expandAboutText6" class="expandAboutText glyphicon glyphicon-chevron-down"></span>How did you make the site?
+            </div>
+        </div>
+        <div class="row">
+            <div id="answer6" class="answers">
+                <p>
+                    The site itself is based on ASP.NET MVC 5 framework, and this is actually the first time I tried it. I'm also using this opportunity to experiment with bootstrap for easy
+                    layout styling and d3.js for svg charts. The site is published as an Azure web app.
+                </p>
+            </div>
+        </div>
+    </div>
 </div>
+
+<script type="text/javascript" src="~/Scripts/About.js"></script>
+<link rel="stylesheet" type="text/css" href="~/Content/About.css">

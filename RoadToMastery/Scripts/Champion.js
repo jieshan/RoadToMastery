@@ -14,15 +14,15 @@ function initializeRadarChart() {
         chartData.push({
             className: "Tier"+(i+3),
             axes: [
-                { axis: "Win Rate", value: Math.pow(10, relativeLevelStats[i][0] * 2) },
-                { axis: "Avg Kills", value: Math.pow(10, relativeLevelStats[i][1] * 2) },
-                { axis: "Avg Deaths", value: Math.pow(10, relativeLevelStats[i][2] * 2) },
-                { axis: "Avg Assists", value: Math.pow(10, relativeLevelStats[i][3] * 2) },
-                { axis: "Avg Physical Dmg", value: Math.pow(10, relativeLevelStats[i][4] * 2), },
-                { axis: "Avg Magic Dmg", value: Math.pow(10, relativeLevelStats[i][5] * 2) },
-                { axis: "Avg Gold(K)", value: Math.pow(10, relativeLevelStats[i][6] * 2) },
-                { axis: "Avg CS", value: Math.pow(10, relativeLevelStats[i][7] * 2) },
-                { axis: "Avg Turrets", value: Math.pow(10, relativeLevelStats[i][8] * 2) }
+                { axis: "Win Rate", value: relativeLevelStats[i][0] },
+                { axis: "Avg Kills", value: relativeLevelStats[i][1] },
+                { axis: "Avg Deaths", value: relativeLevelStats[i][2] },
+                { axis: "Avg Assists", value: relativeLevelStats[i][3] },
+                { axis: "Avg Physical Dmg", value: relativeLevelStats[i][4] },
+                { axis: "Avg Magic Dmg", value: relativeLevelStats[i][5] },
+                { axis: "Avg Gold(K)", value: relativeLevelStats[i][6] },
+                { axis: "Avg CS", value: relativeLevelStats[i][7] },
+                { axis: "Avg Turrets", value: relativeLevelStats[i][8] }
             ]
         });
     }

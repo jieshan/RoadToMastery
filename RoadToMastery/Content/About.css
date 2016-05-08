@@ -1,0 +1,28 @@
+﻿#aboutContent {
+    margin-top: 10px;
+}
+.questions {
+    margin-top: 30px;
+    margin-bottom: 10px;
+    font-size: 20px;
+    color: #c43235;
+    font-weight: bold;
+}
+.expandAboutText {
+    font-size: 14px;
+    margin-right: 10px;
+    color: #06000a;
+}
+.expandAboutText:hover {
+    cursor: pointer
+}
+.aboutImgs {
+    display:block;
+    margin:auto;
+}
+#ahriTableContainer {
+    margin-top: 10px;
+}
+.answers {
+    display: none;
+}

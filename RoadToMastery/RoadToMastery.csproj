@@ -199,9 +199,12 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\About.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Champion.css" />
+    <Content Include="Content\img\AhriTable.png" />
+    <Content Include="Content\img\GangplankRadar.png" />
     <Content Include="Content\Index.css" />
     <Content Include="Content\radar-chart.css" />
     <Content Include="Content\Shared.css" />
@@ -213,6 +216,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Scripts\About.js" />
     <Content Include="Scripts\ai.0.22.8-build00154.js" />
     <Content Include="Scripts\ai.0.22.8-build00154.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -220,6 +224,7 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Properties\PublishProfiles\roadtomastery.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\Champion.js" />
     <Content Include="Scripts\Index.js" />

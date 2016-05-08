@@ -55,6 +55,9 @@ input[type="radio"]{
     text-align: center;
     font-weight: bold;
 }
+#toggleRankingsDisplayButton:hover {
+    cursor: pointer;    
+}
 
 .extremeBar {
     fill: #c43235;

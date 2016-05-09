@@ -204,7 +204,9 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Champion.css" />
     <Content Include="Content\img\AhriTable.png" />
+    <Content Include="Content\img\championScreenshot.png" />
     <Content Include="Content\img\GangplankRadar.png" />
+    <Content Include="Content\img\homeScreenshot.png" />
     <Content Include="Content\Index.css" />
     <Content Include="Content\radar-chart.css" />
     <Content Include="Content\Shared.css" />

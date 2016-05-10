@@ -10,7 +10,9 @@ http://roadtomastery.azurewebsites.net/
 
 ### Overview
 There are two projects in this repo:
+
 1. LoLData - responsible for collecting the data from Riot API
+
 2. RoadToMastery - the web app itself
 	
 ### LoLData 

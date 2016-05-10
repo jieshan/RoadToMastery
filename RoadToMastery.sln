@@ -5,6 +5,8 @@ VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoadToMastery", "RoadToMastery\RoadToMastery.csproj", "{0E0DA9A3-4FA8-4D82-B73B-DC07B842DB28}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoLData", "LoLData\LoLData.csproj", "{F8488012-BB4F-4775-AFE4-1972AF4AA236}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{0E0DA9A3-4FA8-4D82-B73B-DC07B842DB28}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0E0DA9A3-4FA8-4D82-B73B-DC07B842DB28}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0E0DA9A3-4FA8-4D82-B73B-DC07B842DB28}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8488012-BB4F-4775-AFE4-1972AF4AA236}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8488012-BB4F-4775-AFE4-1972AF4AA236}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8488012-BB4F-4775-AFE4-1972AF4AA236}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8488012-BB4F-4775-AFE4-1972AF4AA236}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
